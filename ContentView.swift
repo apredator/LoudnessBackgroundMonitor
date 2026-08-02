@@ -1,4 +1,5 @@
 import SwiftUI
+import Combine
 import AudioToolbox
 import AVFoundation
 
@@ -10,7 +11,7 @@ struct ContentView: View {
             Text("Порог срабатывания: \(Int(vm.threshold)) dB")
                 .font(.headline)
 
-            Slider(value: $vm.threshold, in: -60...-10, step: 1) {
+            Slider(value: $vm.threshold, in: (-60...-10), step: 1) {
                 Text("Threshold")
             }
             .padding()
