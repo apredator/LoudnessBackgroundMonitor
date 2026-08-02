@@ -113,16 +113,20 @@ final class MonitorViewModel: ObservableObject {
 
     private func flashOnce() {
         guard let device = AVCaptureDevice.default(for: .video), device.hasTorch else { return }
+        var locked = false
         do {
             try device.lockForConfiguration()
+            locked = true
             try device.setTorchModeOn(level: 0.8)
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                 device.torchMode = .off
-                device.unlockForConfiguration()
+                if locked {
+                    device.unlockForConfiguration()
+                }
             }
         } catch {
             if device.isTorchActive { device.torchMode = .off }
-            if device.isLockedForConfiguration { device.unlockForConfiguration() }
+            if locked { device.unlockForConfiguration() }
             print("Torch error: \(error)")
         }
     }
