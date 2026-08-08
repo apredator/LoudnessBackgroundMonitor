@@ -1,0 +1,2 @@
+PLACEHOLDER: Add a short silent mp3 named "silent.mp3" (1-2 seconds of silence) to the project target.
+This file helps keep the audio session active in background when `silentLoop` is enabled.

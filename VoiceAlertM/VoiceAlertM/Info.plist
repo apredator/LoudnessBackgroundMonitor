@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>en</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.example.VoiceAlert</string>
+    <key>CFBundleName</key>
+    <string>VoiceAlert</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Приложение использует микрофон для определения уровня громкости и оповещений при громкой речи. Аудио не сохраняется и не передаётся.</string>
+    <key>NSCameraUsageDescription</key>
+    <string>Требуется для управления вспышкой (опционально).</string>
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>audio</string>
+    </array>
+</dict>
+</plist>
